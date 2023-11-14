@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Returns whatever HTTP status code you send it.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return HTTP Status</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+
+<body>
+    <div id="main">
+        <div id="container">
+            <h1>What Is Return HTTP Status?</h1>
+            This site lets you pass over a HTTP status and then get that same code back as the response. It's useful for
+            testing how your application would react to specific return codes.
+            <h2>How Do I Use It?</h2>
+            Generate a DELETE, GET, PATCH, POST, or PUT request to <code>https://returnhttpstatus.com/code/{code}</code>
+            <p>Example:<br>
+                GET https://returnhttpstatus.com/code/401</p>
+            <h2>Output</h2>
+            All output is JSON formatted with a "success" (boolean) and "error" (string or null) fields.
+            <pre>
+{
+    success: true,
+    error: null
+}
+            </pre>
+            <pre>
+{
+    success: false,
+    error: "Invalid code detected."
+}
+            </pre>
+            <h2>What Codes Are Valid?</h2>
+            Any 3-digit number is accepted.
+        </div>
+    </div>
+    <footer>
+        <div id="footer">
+            Version: <%= version %>
+        </div>
+    </footer>
+
+</body>
+
+</html>
